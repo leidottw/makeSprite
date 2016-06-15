@@ -22,7 +22,7 @@ gulp.task('sprite', function() {
             let spriteData = gulp.src(path.join(ROOT, file, '*.png')).pipe(spritesmith({
                 imgName: file + '.png',
                 cssName: file + '.css',
-                algorithm: 'top-down',
+                algorithm: 'binary-tree',
                 cssTemplate: function(data) {
                     let selectorList = [],
                         css = '';
@@ -39,14 +39,14 @@ css += `.${file}-${sprite.name.replace(/_active$/, ':active')} {
     width: ${sprite.px.width};
     height: ${sprite.px.height};
 }\n`;
-} else {
+}
+
 selectorList.push(`.${file}-${sprite.name}`);
 css += `.${file}-${sprite.name} {
     background-position: ${sprite.px.offset_x} ${sprite.px.offset_y};
     width: ${sprite.px.width};
     height: ${sprite.px.height};
 }\n`;
-}
 
 if(data.sprites.length === index + 1) {
 css = `${selectorList.join(', ')} {
@@ -61,7 +61,7 @@ css = `${selectorList.join(', ')} {
             spriteData.img
                 .pipe(buffer())
                 .pipe(gulpPngquant({
-                    quality: [65, 80]
+                    quality: [35, 50]
                 }))
                 .pipe(gulp.dest('./build/images/'));    //產生後的sprite圖路徑
 
