@@ -1,3 +1,5 @@
+'use strict';
+
 const ROOT = './images';
 const buffer = require('vinyl-buffer');
 const gulp = require('gulp');
@@ -17,35 +19,39 @@ gulp.task('sprite', function() {
         files.filter(function (file) {
             return fs.statSync(path.join(ROOT, file)).isDirectory();
         }).forEach(function (file) {
-            var spriteData = gulp.src(path.join(ROOT, file, '*.png')).pipe(spritesmith({
+            let spriteData = gulp.src(path.join(ROOT, file, '*.png')).pipe(spritesmith({
                 imgName: file + '.png',
                 cssName: file + '.css',
                 algorithm: 'top-down',
-                // cssTemplate: 'handlebarsStr.css.handlebars'
                 cssTemplate: function(data) {
-                    var css = '';
-                    data.sprites.forEach(function (sprite) {
+                    let selectorList = [],
+                        css = '';
+                    data.sprites.forEach(function (sprite, index) {
 if(/_hover$/.test(sprite.name)) {
 css += `.${file}-${sprite.name.replace(/_hover$/, ':hover')} {
-    background-image: url(${sprite.escaped_image});
     background-position: ${sprite.px.offset_x} ${sprite.px.offset_y};
     width: ${sprite.px.width};
     height: ${sprite.px.height};
 }\n`;
 } else if(/_active$/.test(sprite.name)) {
 css += `.${file}-${sprite.name.replace(/_active$/, ':active')} {
-    background-image: url(${sprite.escaped_image});
     background-position: ${sprite.px.offset_x} ${sprite.px.offset_y};
     width: ${sprite.px.width};
     height: ${sprite.px.height};
 }\n`;
 } else {
+selectorList.push(`.${file}-${sprite.name}`);
 css += `.${file}-${sprite.name} {
-    background-image: url(${sprite.escaped_image});
     background-position: ${sprite.px.offset_x} ${sprite.px.offset_y};
     width: ${sprite.px.width};
     height: ${sprite.px.height};
 }\n`;
+}
+
+if(data.sprites.length === index + 1) {
+css = `${selectorList.join(', ')} {
+    background-image: url(${sprite.escaped_image});
+}\n${css}`;
 }
                     });
                     return css;

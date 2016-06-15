@@ -4,17 +4,14 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npm install -g gulp-cli"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-pngquant": "^1.0.2",
     "gulp.spritesmith": "^6.2.1",
-    "vinyl-buffer": "^1.0.0",
-    "gulp-pngquant": "^1.0.2"
-  },
-  "scripts": {
-    "preinstall": "npm install -g gulp-cli"
+    "vinyl-buffer": "^1.0.0"
   }
 }
