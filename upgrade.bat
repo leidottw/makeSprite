@@ -1,2 +1,2 @@
 git pull --rebase
-npm install
+npm update
