@@ -61,7 +61,7 @@ css = `${selectorList.join(', ')} {
             spriteData.img
                 .pipe(buffer())
                 .pipe(gulpPngquant({
-                    quality: [35, 50]
+                    quality: '35-50'
                 }))
                 .pipe(gulp.dest('./build/images/'));    //產生後的sprite圖路徑
 
