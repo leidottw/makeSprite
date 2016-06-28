@@ -1,6 +1,6 @@
 'use strict';
 
-const ROOT = './images';
+const config = require('./config.js');
 const buffer = require('vinyl-buffer');
 const gulp = require('gulp');
 const gulpPngquant = require('gulp-pngquant');
@@ -11,15 +11,15 @@ const path = require('path');
 gulp.task('default', ['sprite']);
 
 gulp.task('sprite', function() {
-    fs.readdir(ROOT, function(err, files) {
+    fs.readdir(config.spriteSrc, function(err, files) {
         if (err) {
             throw err;
         }
 
         files.filter(function (file) {
-            return fs.statSync(path.join(ROOT, file)).isDirectory();
+            return fs.statSync(path.join(config.spriteSrc, file)).isDirectory();
         }).forEach(function (file) {
-            let spriteData = gulp.src(path.join(ROOT, file, '*.png')).pipe(spritesmith({
+            let spriteData = gulp.src(path.join(config.spriteSrc, file, '*.png')).pipe(spritesmith({
                 imgName: file + '.png',
                 cssName: file + '.css',
                 algorithm: 'binary-tree',
@@ -63,9 +63,17 @@ css = `${selectorList.join(', ')} {
                 .pipe(gulpPngquant({
                     quality: '35-50'
                 }))
-                .pipe(gulp.dest('./build/images/'));    //產生後的sprite圖路徑
+                .pipe(gulp.dest(config.spriteDest + 'images/'));    //產生後的sprite圖路徑
 
-            spriteData.css.pipe(gulp.dest('./build/css/'));   //產生後的css路徑
+            spriteData.css.pipe(gulp.dest(config.spriteDest + 'css/'));   //產生後的css路徑
         });
     });
+});
+
+gulp.task('compress', function() {
+    gulp.src(config.compressSrc + '**/*.png')
+        .pipe(gulpPngquant({
+            quality: '35-50'
+        }))
+        .pipe(gulp.dest(config.compressDest));
 });
