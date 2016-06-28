@@ -10,8 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-image-resize": "^0.8.0",
     "gulp-pngquant": "^1.0.4",
+    "gulp-rename": "^1.2.2",
     "gulp.spritesmith": "^6.2.1",
+    "jimp": "^0.2.24",
     "vinyl-buffer": "^1.0.0"
   }
 }
