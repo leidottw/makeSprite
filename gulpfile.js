@@ -86,7 +86,8 @@ gulp.task('compress', function() {
 gulp.task('icon_100', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 100
+            width: 100,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_100';
@@ -100,7 +101,8 @@ gulp.task('icon_100', function() {
 gulp.task('icon_80', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 80
+            width: 80,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_80';
@@ -114,7 +116,8 @@ gulp.task('icon_80', function() {
 gulp.task('icon_80_gray', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 80
+            width: 80,
+            imageMagick: true
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
@@ -129,7 +132,8 @@ gulp.task('icon_80_gray', function() {
 gulp.task('icon_68', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 68
+            width: 68,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_68';
@@ -143,7 +147,8 @@ gulp.task('icon_68', function() {
 gulp.task('icon_68_gray', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 68
+            width: 68,
+            imageMagick: true
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
@@ -158,7 +163,8 @@ gulp.task('icon_68_gray', function() {
 gulp.task('icon_64', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 64
+            width: 64,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_64';
@@ -172,7 +178,8 @@ gulp.task('icon_64', function() {
 gulp.task('icon_64_gray', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 64
+            width: 64,
+            imageMagick: true
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
@@ -187,7 +194,8 @@ gulp.task('icon_64_gray', function() {
 gulp.task('icon_48', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 48
+            width: 48,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_48';
@@ -201,7 +209,8 @@ gulp.task('icon_48', function() {
 gulp.task('icon_24', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 24
+            width: 24,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_24';
@@ -215,7 +224,8 @@ gulp.task('icon_24', function() {
 gulp.task('icon_20', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 20
+            width: 20,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_20';
@@ -229,7 +239,8 @@ gulp.task('icon_20', function() {
 gulp.task('icon_16', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 16
+            width: 16,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_16';
@@ -243,7 +254,8 @@ gulp.task('icon_16', function() {
 gulp.task('icon_512', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 512
+            width: 512,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
@@ -258,7 +270,8 @@ gulp.task('icon_512', function() {
 gulp.task('icon_380', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 380
+            width: 380,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
@@ -273,7 +286,8 @@ gulp.task('icon_380', function() {
 gulp.task('icon_350', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 350
+            width: 350,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
@@ -288,7 +302,8 @@ gulp.task('icon_350', function() {
 gulp.task('icon_256', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
-            width: 256
+            width: 256,
+            imageMagick: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';

@@ -1,6 +1,27 @@
-2016/6/28
+2016/06/29
+1. 新增製作qpkgIcon功能
+   windows電腦使用此功能需安裝
+   http://www.imagemagick.org/download/binaries/ImageMagick-7.0.2-1-Q16-x64-dll.exe
+   安裝步驟請勿無腦next
+   到了很多checkbox頁面時
+
+   記得勾選"Install legacy utilities (e.g. convert)"
+   記得勾選"Install legacy utilities (e.g. convert)"
+   記得勾選"Install legacy utilities (e.g. convert)"
+
+   要製作Icon的原始大圖請放在以下目錄
+     作業區/appIcon來源/[自訂目錄名稱]/[原始圖]
+     * 自訂目錄名稱: 產生的結果也會出現在對應的目錄名稱下
+     * 輸出結果: 產生結果的檔名會同原始圖檔名後面再加以"_size"點綴
+
+2016/06/28
 1. 新增只做壓縮不組圖功能
 2. 可自訂目錄工作目錄路徑(可自己修改config.js檔)
    預設工作目錄路徑變更為makeSprite目錄底下的
-     作業區/images (組縮圖+壓縮的來源檔案放置處)
-     作業區/只做壓縮來源 (只做壓縮的來源檔案放置處)
+     組縮圖+壓縮的來源檔案放置處
+       作業區/images/[自訂目錄名稱]/[待組合的的原始檔們]
+       * 自訂目錄名稱: 產生的結果檔名將會同[自訂目錄名稱]
+
+     只做壓縮的來源檔案放置處
+       作業區/只做壓縮來源/[自訂目錄名稱]/[待組合的的原始檔們]
+       * 自訂目錄名稱: 產生的結果也會出現在對應的[自訂目錄名稱]目錄下
