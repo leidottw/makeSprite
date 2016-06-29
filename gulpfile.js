@@ -93,7 +93,8 @@ gulp.task('icon_100', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 100,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_100';
@@ -105,7 +106,8 @@ gulp.task('icon_80', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 80,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_80';
@@ -117,7 +119,8 @@ gulp.task('icon_80_gray', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 80,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
@@ -130,7 +133,8 @@ gulp.task('icon_68', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 68,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_68';
@@ -142,7 +146,8 @@ gulp.task('icon_68_gray', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 68,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
@@ -155,7 +160,8 @@ gulp.task('icon_64', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 64,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_64';
@@ -167,7 +173,8 @@ gulp.task('icon_64_gray', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 64,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
@@ -180,7 +187,8 @@ gulp.task('icon_48', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 48,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_48';
@@ -192,7 +200,8 @@ gulp.task('icon_24', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 24,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_24';
@@ -204,7 +213,8 @@ gulp.task('icon_20', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 20,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_20';
@@ -216,7 +226,8 @@ gulp.task('icon_16', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 16,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.basename += '_16';
@@ -228,7 +239,8 @@ gulp.task('icon_512', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 512,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
@@ -241,7 +253,8 @@ gulp.task('icon_380', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 380,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
@@ -254,7 +267,8 @@ gulp.task('icon_350', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 350,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
@@ -267,7 +281,8 @@ gulp.task('icon_256', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 256,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
@@ -282,7 +297,8 @@ gulp.task('mipmap-hdpi', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 72,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/android/mipmap-hdpi';
@@ -295,7 +311,8 @@ gulp.task('mipmap-ldpi', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 36,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/android/mipmap-ldpi';
@@ -308,7 +325,8 @@ gulp.task('mipmap-mdpi', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 48,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/android/mipmap-mdpi';
@@ -321,7 +339,8 @@ gulp.task('mipmap-xdpi', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 96,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/android/mipmap-xdpi';
@@ -334,7 +353,8 @@ gulp.task('mipmap-xxdpi', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 144,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/android/mipmap-xxdpi';
@@ -347,7 +367,8 @@ gulp.task('mipmap-xxxdpi', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 192,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/android/mipmap-xxxdpi';
@@ -360,7 +381,8 @@ gulp.task('playstore-icon', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 512,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/android';
@@ -374,7 +396,8 @@ gulp.task('29@1x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 29,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -387,7 +410,8 @@ gulp.task('29@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 58,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -400,7 +424,8 @@ gulp.task('29@3x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 87,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -413,7 +438,8 @@ gulp.task('40@1x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 40,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -426,7 +452,8 @@ gulp.task('40@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 80,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -439,7 +466,8 @@ gulp.task('40@3x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 120,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -452,7 +480,8 @@ gulp.task('60@1x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 60,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -465,7 +494,8 @@ gulp.task('60@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 120,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -478,7 +508,8 @@ gulp.task('60@3x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 180,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -491,7 +522,8 @@ gulp.task('76@1x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 76,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -504,7 +536,8 @@ gulp.task('76@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 152,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -517,7 +550,8 @@ gulp.task('76@3x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 228,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -530,7 +564,8 @@ gulp.task('83.5@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 167,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios/AppIcon.appiconset';
@@ -543,7 +578,8 @@ gulp.task('iTunesArtwork@1x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 512,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios';
@@ -556,7 +592,8 @@ gulp.task('iTunesArtwork@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 1024,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios';
@@ -569,7 +606,8 @@ gulp.task('iTunesArtwork@3x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 1536,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/ios';
@@ -582,7 +620,8 @@ gulp.task('watchkit24@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 48,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/watchkit/AppIcon.appiconset';
@@ -595,7 +634,8 @@ gulp.task('watchkit27.5@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 55,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/watchkit/AppIcon.appiconset';
@@ -608,7 +648,8 @@ gulp.task('watchkit29@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 58,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/watchkit/AppIcon.appiconset';
@@ -621,7 +662,8 @@ gulp.task('watchkit29@3x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 87,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/watchkit/AppIcon.appiconset';
@@ -634,7 +676,8 @@ gulp.task('watchkit40@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 80,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/watchkit/AppIcon.appiconset';
@@ -647,7 +690,8 @@ gulp.task('watchkit44@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 88,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/watchkit/AppIcon.appiconset';
@@ -660,7 +704,8 @@ gulp.task('watchkit86@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 172,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/watchkit/AppIcon.appiconset';
@@ -673,7 +718,8 @@ gulp.task('watchkit98@2x', function() {
     gulp.src(config.appIconSrc + '*/*.png')
         .pipe(imageResize({
             width: 196,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/watchkit/AppIcon.appiconset';
@@ -688,7 +734,8 @@ gulp.task('imessenger27x20@1x', function() {
             width: 27,
             height: 20,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -703,7 +750,8 @@ gulp.task('imessenger27x20@2x', function() {
             width: 54,
             height: 40,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -718,7 +766,8 @@ gulp.task('imessenger27x20@3x', function() {
             width: 81,
             height: 60,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -733,7 +782,8 @@ gulp.task('imessenger67x50@2x', function() {
             width: 134,
             height: 100,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -748,7 +798,8 @@ gulp.task('imessenger74x55@2x', function() {
             width: 148,
             height: 110,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -763,7 +814,8 @@ gulp.task('imessenger60x45@1x', function() {
             width: 60,
             height: 45,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -778,7 +830,8 @@ gulp.task('imessenger60x45@2x', function() {
             width: 120,
             height: 90,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -793,7 +846,8 @@ gulp.task('imessenger60x45@3x', function() {
             width: 180,
             height: 135,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -808,7 +862,8 @@ gulp.task('imessenger32x24@1x', function() {
             width: 32,
             height: 24,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -823,7 +878,8 @@ gulp.task('imessenger32x24@2x', function() {
             width: 64,
             height: 48,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
@@ -838,7 +894,8 @@ gulp.task('imessenger32x24@3x', function() {
             width: 96,
             height: 72,
             crop: true,
-            imageMagick: true
+            imageMagick: true,
+            upscale: true
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/imessenger';
