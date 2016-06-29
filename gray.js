@@ -11,7 +11,7 @@ const jimp = require('jimp');
 const PLUGIN_NAME = 'gulp-pngquant';
 
 // plugin level function (dealing with files)
-function gulpMakeAppIcon(options) {
+function gray(options) {
     // creating a stream through which each file will pass
     var stream = through.obj(function(file, enc, cb) {
         if (file.isStream()) {
@@ -41,4 +41,4 @@ function gulpMakeAppIcon(options) {
 };
 
 // exporting the plugin main function
-module.exports = gulpMakeAppIcon;
+module.exports = gray;
