@@ -6,5 +6,6 @@ exports = module.exports = {
     compressSrc: './作業區/只做壓縮來源/', // 只做壓縮 檔案來源路徑
     compressDest: './作業區/只做壓縮結果/', // 只做壓縮 結果產生路徑
     appIconSrc: './作業區/appIcon來源/',
-    appIconDest: './作業區/appIcon結果/'
+    appIconDestQpkg: './作業區/appIcon結果/qpkg',
+    appIconDestMobileApp: './作業區/appIcon結果/mobileApp'
 };

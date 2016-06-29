@@ -12,7 +12,13 @@ const gray = require('./gray.js');
 const imageResize = require('gulp-image-resize');
 
 gulp.task('default', ['sprite']);
+gulp.task('appIcon', ['qpkgIcon', 'mobileAppIcon']);
 gulp.task('qpkgIcon', ['icon_100', 'icon_80', 'icon_80_gray', 'icon_68', 'icon_68_gray', 'icon_64', 'icon_64_gray', 'icon_48', 'icon_24', 'icon_20', 'icon_16', 'icon_512', 'icon_380', 'icon_350', 'icon_256']);
+gulp.task('mobileAppIcon', ['androidIcon', 'iosIcon', 'watchkitIcon', 'imessengerIcon']);
+gulp.task('androidIcon', ['mipmap-hdpi', 'mipmap-ldpi', 'mipmap-mdpi', 'mipmap-xdpi', 'mipmap-xxdpi', 'mipmap-xxxdpi', 'playstore-icon']);
+gulp.task('iosIcon', ['29@1x', '29@2x', '29@3x', '40@1x', '40@2x', '40@3x', '60@1x', '60@2x', '60@3x', '76@1x', '76@2x', '76@3x', '83.5@2x', 'iTunesArtwork@1x', 'iTunesArtwork@2x', 'iTunesArtwork@3x']);
+gulp.task('watchkitIcon', ['watchkit24@2x', 'watchkit27.5@2x', 'watchkit29@2x', 'watchkit29@3x', 'watchkit40@2x', 'watchkit44@2x', 'watchkit86@2x', 'watchkit98@2x']);
+gulp.task('imessengerIcon', ['imessenger27x20@1x', 'imessenger27x20@2x', 'imessenger27x20@3x', 'imessenger67x50@2x', 'imessenger74x55@2x', 'imessenger60x45@1x', 'imessenger60x45@2x', 'imessenger60x45@3x', 'imessenger32x24@1x', 'imessenger32x24@2x', 'imessenger32x24@3x']);
 
 gulp.task('sprite', function() {
     fs.readdir(config.spriteSrc, function(err, files) {
@@ -95,7 +101,7 @@ gulp.task('icon_100', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_80', function() {
@@ -110,7 +116,7 @@ gulp.task('icon_80', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_80_gray', function() {
@@ -126,7 +132,7 @@ gulp.task('icon_80_gray', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_68', function() {
@@ -141,7 +147,7 @@ gulp.task('icon_68', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_68_gray', function() {
@@ -157,7 +163,7 @@ gulp.task('icon_68_gray', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_64', function() {
@@ -172,7 +178,7 @@ gulp.task('icon_64', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_64_gray', function() {
@@ -188,7 +194,7 @@ gulp.task('icon_64_gray', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_48', function() {
@@ -203,7 +209,7 @@ gulp.task('icon_48', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_24', function() {
@@ -218,7 +224,7 @@ gulp.task('icon_24', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_20', function() {
@@ -233,7 +239,7 @@ gulp.task('icon_20', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_16', function() {
@@ -248,7 +254,7 @@ gulp.task('icon_16', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_512', function() {
@@ -264,7 +270,7 @@ gulp.task('icon_512', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_380', function() {
@@ -280,7 +286,7 @@ gulp.task('icon_380', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_350', function() {
@@ -296,7 +302,7 @@ gulp.task('icon_350', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_256', function() {
@@ -312,5 +318,702 @@ gulp.task('icon_256', function() {
         .pipe(gulpPngquant({
             quality: '65-80'
         }))
-        .pipe(gulp.dest(config.appIconDest));
+        .pipe(gulp.dest(config.appIconDestQpkg));
+});
+
+
+/*android icon*/
+gulp.task('mipmap-hdpi', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 72,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/android/mipmap-hdpi';
+            path.basename = 'ic_launcher';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('mipmap-ldpi', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 36,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/android/mipmap-ldpi';
+            path.basename = 'ic_launcher';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('mipmap-mdpi', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 48,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/android/mipmap-mdpi';
+            path.basename = 'ic_launcher';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('mipmap-xdpi', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 96,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/android/mipmap-xdpi';
+            path.basename = 'ic_launcher';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('mipmap-xxdpi', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 144,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/android/mipmap-xxdpi';
+            path.basename = 'ic_launcher';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('mipmap-xxxdpi', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 192,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/android/mipmap-xxxdpi';
+            path.basename = 'ic_launcher';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('playstore-icon', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 512,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/android';
+            path.basename = 'playstore-icon';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+/*iosIcon*/
+gulp.task('29@1x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 29,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-29x29@1x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('29@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 58,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-29x29@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('29@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 87,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-29x29@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('40@1x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 40,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-40x40@1x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('40@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 80,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-40x40@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('40@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 120,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-40x40@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('60@1x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 60,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-60x60@1x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('60@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 120,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-60x60@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('60@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 180,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-60x60@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('76@1x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 76,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-76x76@1x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('76@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 152,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-76x76@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('76@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 228,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-76x76@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('83.5@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 83.5,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios/AppIcon.appiconset';
+            path.basename = 'Icon-App-83.5x83.5@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('iTunesArtwork@1x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 512,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios';
+            path.basename = 'iTunesArtwork@1x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('iTunesArtwork@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 1024,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios';
+            path.basename = 'iTunesArtwork@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('iTunesArtwork@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 1536,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/ios';
+            path.basename = 'iTunesArtwork@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('watchkit24@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 48,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.basename = 'Icon-24@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('watchkit27.5@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 55,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.basename = 'Icon-27.5@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('watchkit29@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 58,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.basename = 'Icon-29@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('watchkit29@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 87,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.basename = 'Icon-29@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('watchkit40@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 80,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.basename = 'Icon-40@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('watchkit44@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 88,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.basename = 'Icon-44@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('watchkit86@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 172,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.basename = 'Icon-86@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('watchkit98@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 196,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.basename = 'Icon-98@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger27x20@1x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 27,
+            height: 20,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-app-27x20@1x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger27x20@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 54,
+            height: 40,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-app-27x20@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger27x20@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 81,
+            height: 60,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-app-27x20@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger67x50@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 134,
+            height: 100,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-app-iPadAir-67x50@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger74x55@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 148,
+            height: 110,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-app-iPadAir-74x55@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger60x45@1x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 60,
+            height: 45,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-app-iPhone-60x45@1x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger60x45@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 120,
+            height: 90,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-app-iPhone-60x45@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger60x45@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 180,
+            height: 135,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-app-iPhone-60x45@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger32x24@1x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 32,
+            height: 24,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-transcript-32x24@1x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger32x24@2x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 64,
+            height: 48,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-transcript-32x24@2x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('imessenger32x24@3x', function() {
+    gulp.src(config.appIconSrc + '*/*.png')
+        .pipe(imageResize({
+            width: 96,
+            height: 72,
+            crop: true,
+            imageMagick: true
+        }))
+        .pipe(gulpRename(function(path) {
+            path.dirname += '/imessenger';
+            path.basename = 'icon-messages-transcript-32x24@3x';
+        }))
+        .pipe(gulpPngquant({
+            quality: '65-80'
+        }))
+        .pipe(gulp.dest(config.appIconDestMobileApp));
 });
