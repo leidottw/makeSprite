@@ -400,7 +400,7 @@ gulp.task('29@1x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-29x29@1x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -414,7 +414,7 @@ gulp.task('29@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-29x29@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -428,7 +428,7 @@ gulp.task('29@3x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-29x29@3x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -442,7 +442,7 @@ gulp.task('40@1x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-40x40@1x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -456,7 +456,7 @@ gulp.task('40@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-40x40@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -470,7 +470,7 @@ gulp.task('40@3x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-40x40@3x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -484,7 +484,7 @@ gulp.task('60@1x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-60x60@1x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -498,7 +498,7 @@ gulp.task('60@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-60x60@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -512,7 +512,7 @@ gulp.task('60@3x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-60x60@3x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -526,7 +526,7 @@ gulp.task('76@1x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-76x76@1x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -540,7 +540,7 @@ gulp.task('76@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-76x76@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -554,7 +554,7 @@ gulp.task('76@3x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-76x76@3x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -568,7 +568,7 @@ gulp.task('83.5@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/ios/AppIcon.appiconset';
+            path.dirname += '/ios';
             path.basename = 'Icon-App-83.5x83.5@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -624,7 +624,7 @@ gulp.task('watchkit24@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.dirname += '/watchkit';
             path.basename = 'Icon-24@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -638,7 +638,7 @@ gulp.task('watchkit27.5@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.dirname += '/watchkit';
             path.basename = 'Icon-27.5@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -652,7 +652,7 @@ gulp.task('watchkit29@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.dirname += '/watchkit';
             path.basename = 'Icon-29@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -666,7 +666,7 @@ gulp.task('watchkit29@3x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.dirname += '/watchkit';
             path.basename = 'Icon-29@3x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -680,7 +680,7 @@ gulp.task('watchkit40@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.dirname += '/watchkit';
             path.basename = 'Icon-40@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -694,7 +694,7 @@ gulp.task('watchkit44@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.dirname += '/watchkit';
             path.basename = 'Icon-44@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -708,7 +708,7 @@ gulp.task('watchkit86@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.dirname += '/watchkit';
             path.basename = 'Icon-86@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
@@ -722,7 +722,7 @@ gulp.task('watchkit98@2x', function() {
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.dirname += '/watchkit/AppIcon.appiconset';
+            path.dirname += '/watchkit';
             path.basename = 'Icon-98@2x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
