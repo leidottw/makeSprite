@@ -1,7 +1,20 @@
+2016/06/30
+製作app icon調整為qpkg, android, ios使用不同原圖的方式
+  範例:
+    作業區/appIcon來源/Container/Container_qpkg.png
+    作業區/appIcon來源/Container/Container_android.png
+    作業區/appIcon來源/Container/Container_ios.png
+
+製作圖給qpkg會使用Container_qpkg.png當原圖
+製作圖給android會使用Container_android.png當原圖
+製作圖給ios會使用Container_ios.png當原圖
+
+
 2016/06/29
 1. 新增製作mobileAppIcon功能
    點選"製作appIcon.bat"
    會同時做出for qpkg與for mobile app的icon
+
 
 2016/06/29
 1. 新增製作qpkgIcon功能
