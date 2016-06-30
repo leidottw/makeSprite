@@ -90,33 +90,33 @@ gulp.task('compress', function() {
 
 /* qpkg icon */
 gulp.task('icon_100', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 100,
             imageMagick: true,
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.basename += '_100';
+            path.basename = path.basename.replace('_qpkg', '_100');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_80', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 80,
             imageMagick: true,
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.basename += '_80';
+            path.basename = path.basename.replace('_qpkg', '_80');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_80_gray', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 80,
             imageMagick: true,
@@ -124,26 +124,26 @@ gulp.task('icon_80_gray', function() {
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
-            path.basename += '_80_gray';
+            path.basename = path.basename.replace('_qpkg', '_80_gray');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_68', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 68,
             imageMagick: true,
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.basename += '_68';
+            path.basename = path.basename.replace('_qpkg', '_68');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_68_gray', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 68,
             imageMagick: true,
@@ -151,26 +151,26 @@ gulp.task('icon_68_gray', function() {
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
-            path.basename += '_68_gray';
+            path.basename = path.basename.replace('_qpkg', '_68_gray');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_64', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 64,
             imageMagick: true,
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.basename += '_64';
+            path.basename = path.basename.replace('_qpkg', '_64');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_64_gray', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 64,
             imageMagick: true,
@@ -178,65 +178,65 @@ gulp.task('icon_64_gray', function() {
         }))
         .pipe(gray())
         .pipe(gulpRename(function(path) {
-            path.basename += '_64_gray';
+            path.basename = path.basename.replace('_qpkg', '_64_gray');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_48', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 48,
             imageMagick: true,
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.basename += '_48';
+            path.basename = path.basename.replace('_qpkg', '_48');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_24', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 24,
             imageMagick: true,
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.basename += '_24';
+            path.basename = path.basename.replace('_qpkg', '_24');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_20', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 20,
             imageMagick: true,
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.basename += '_20';
+            path.basename = path.basename.replace('_qpkg', '_20');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_16', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 16,
             imageMagick: true,
             upscale: true
         }))
         .pipe(gulpRename(function(path) {
-            path.basename += '_16';
+            path.basename = path.basename.replace('_qpkg', '_16');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_512', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 512,
             imageMagick: true,
@@ -244,13 +244,13 @@ gulp.task('icon_512', function() {
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
-            path.basename += '_512';
+            path.basename = path.basename.replace('_qpkg', '_512');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_380', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 380,
             imageMagick: true,
@@ -258,13 +258,13 @@ gulp.task('icon_380', function() {
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
-            path.basename += '_380';
+            path.basename = path.basename.replace('_qpkg', '_380');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_350', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 350,
             imageMagick: true,
@@ -272,13 +272,13 @@ gulp.task('icon_350', function() {
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
-            path.basename += '_350';
+            path.basename = path.basename.replace('_qpkg', '_350');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
 
 gulp.task('icon_256', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_qpkg.png')
         .pipe(imageResize({
             width: 256,
             imageMagick: true,
@@ -286,7 +286,7 @@ gulp.task('icon_256', function() {
         }))
         .pipe(gulpRename(function(path) {
             path.dirname += '/HDStation';
-            path.basename += '_256';
+            path.basename = path.basename.replace('_qpkg', '_256');
         }))
         .pipe(gulp.dest(config.appIconDestQpkg));
 });
@@ -294,7 +294,7 @@ gulp.task('icon_256', function() {
 
 /*android icon*/
 gulp.task('mipmap-hdpi', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_android.png')
         .pipe(imageResize({
             width: 72,
             imageMagick: true,
@@ -308,7 +308,7 @@ gulp.task('mipmap-hdpi', function() {
 });
 
 gulp.task('mipmap-ldpi', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_android.png')
         .pipe(imageResize({
             width: 36,
             imageMagick: true,
@@ -322,7 +322,7 @@ gulp.task('mipmap-ldpi', function() {
 });
 
 gulp.task('mipmap-mdpi', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_android.png')
         .pipe(imageResize({
             width: 48,
             imageMagick: true,
@@ -336,7 +336,7 @@ gulp.task('mipmap-mdpi', function() {
 });
 
 gulp.task('mipmap-xdpi', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_android.png')
         .pipe(imageResize({
             width: 96,
             imageMagick: true,
@@ -350,7 +350,7 @@ gulp.task('mipmap-xdpi', function() {
 });
 
 gulp.task('mipmap-xxdpi', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_android.png')
         .pipe(imageResize({
             width: 144,
             imageMagick: true,
@@ -364,7 +364,7 @@ gulp.task('mipmap-xxdpi', function() {
 });
 
 gulp.task('mipmap-xxxdpi', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_android.png')
         .pipe(imageResize({
             width: 192,
             imageMagick: true,
@@ -378,7 +378,7 @@ gulp.task('mipmap-xxxdpi', function() {
 });
 
 gulp.task('playstore-icon', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_android.png')
         .pipe(imageResize({
             width: 512,
             imageMagick: true,
@@ -393,7 +393,7 @@ gulp.task('playstore-icon', function() {
 
 /*iosIcon*/
 gulp.task('29@1x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 29,
             imageMagick: true,
@@ -407,7 +407,7 @@ gulp.task('29@1x', function() {
 });
 
 gulp.task('29@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 58,
             imageMagick: true,
@@ -421,7 +421,7 @@ gulp.task('29@2x', function() {
 });
 
 gulp.task('29@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 87,
             imageMagick: true,
@@ -435,7 +435,7 @@ gulp.task('29@3x', function() {
 });
 
 gulp.task('40@1x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 40,
             imageMagick: true,
@@ -449,7 +449,7 @@ gulp.task('40@1x', function() {
 });
 
 gulp.task('40@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 80,
             imageMagick: true,
@@ -463,7 +463,7 @@ gulp.task('40@2x', function() {
 });
 
 gulp.task('40@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 120,
             imageMagick: true,
@@ -477,7 +477,7 @@ gulp.task('40@3x', function() {
 });
 
 gulp.task('60@1x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 60,
             imageMagick: true,
@@ -491,7 +491,7 @@ gulp.task('60@1x', function() {
 });
 
 gulp.task('60@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 120,
             imageMagick: true,
@@ -505,7 +505,7 @@ gulp.task('60@2x', function() {
 });
 
 gulp.task('60@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 180,
             imageMagick: true,
@@ -519,7 +519,7 @@ gulp.task('60@3x', function() {
 });
 
 gulp.task('76@1x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 76,
             imageMagick: true,
@@ -533,7 +533,7 @@ gulp.task('76@1x', function() {
 });
 
 gulp.task('76@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 152,
             imageMagick: true,
@@ -547,7 +547,7 @@ gulp.task('76@2x', function() {
 });
 
 gulp.task('76@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 228,
             imageMagick: true,
@@ -561,7 +561,7 @@ gulp.task('76@3x', function() {
 });
 
 gulp.task('83.5@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 167,
             imageMagick: true,
@@ -575,7 +575,7 @@ gulp.task('83.5@2x', function() {
 });
 
 gulp.task('iTunesArtwork@1x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 512,
             imageMagick: true,
@@ -589,7 +589,7 @@ gulp.task('iTunesArtwork@1x', function() {
 });
 
 gulp.task('iTunesArtwork@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 1024,
             imageMagick: true,
@@ -603,7 +603,7 @@ gulp.task('iTunesArtwork@2x', function() {
 });
 
 gulp.task('iTunesArtwork@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 1536,
             imageMagick: true,
@@ -617,7 +617,7 @@ gulp.task('iTunesArtwork@3x', function() {
 });
 
 gulp.task('watchkit24@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 48,
             imageMagick: true,
@@ -631,7 +631,7 @@ gulp.task('watchkit24@2x', function() {
 });
 
 gulp.task('watchkit27.5@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 55,
             imageMagick: true,
@@ -645,7 +645,7 @@ gulp.task('watchkit27.5@2x', function() {
 });
 
 gulp.task('watchkit29@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 58,
             imageMagick: true,
@@ -659,7 +659,7 @@ gulp.task('watchkit29@2x', function() {
 });
 
 gulp.task('watchkit29@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 87,
             imageMagick: true,
@@ -673,7 +673,7 @@ gulp.task('watchkit29@3x', function() {
 });
 
 gulp.task('watchkit40@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 80,
             imageMagick: true,
@@ -687,7 +687,7 @@ gulp.task('watchkit40@2x', function() {
 });
 
 gulp.task('watchkit44@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 88,
             imageMagick: true,
@@ -701,7 +701,7 @@ gulp.task('watchkit44@2x', function() {
 });
 
 gulp.task('watchkit86@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 172,
             imageMagick: true,
@@ -715,7 +715,7 @@ gulp.task('watchkit86@2x', function() {
 });
 
 gulp.task('watchkit98@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 196,
             imageMagick: true,
@@ -729,7 +729,7 @@ gulp.task('watchkit98@2x', function() {
 });
 
 gulp.task('imessenger27x20@1x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 27,
             height: 20,
@@ -745,7 +745,7 @@ gulp.task('imessenger27x20@1x', function() {
 });
 
 gulp.task('imessenger27x20@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 54,
             height: 40,
@@ -761,7 +761,7 @@ gulp.task('imessenger27x20@2x', function() {
 });
 
 gulp.task('imessenger27x20@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 81,
             height: 60,
@@ -777,7 +777,7 @@ gulp.task('imessenger27x20@3x', function() {
 });
 
 gulp.task('imessenger67x50@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 134,
             height: 100,
@@ -793,7 +793,7 @@ gulp.task('imessenger67x50@2x', function() {
 });
 
 gulp.task('imessenger74x55@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 148,
             height: 110,
@@ -809,7 +809,7 @@ gulp.task('imessenger74x55@2x', function() {
 });
 
 gulp.task('imessenger60x45@1x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 60,
             height: 45,
@@ -825,7 +825,7 @@ gulp.task('imessenger60x45@1x', function() {
 });
 
 gulp.task('imessenger60x45@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 120,
             height: 90,
@@ -841,7 +841,7 @@ gulp.task('imessenger60x45@2x', function() {
 });
 
 gulp.task('imessenger60x45@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 180,
             height: 135,
@@ -857,7 +857,7 @@ gulp.task('imessenger60x45@3x', function() {
 });
 
 gulp.task('imessenger32x24@1x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 32,
             height: 24,
@@ -873,7 +873,7 @@ gulp.task('imessenger32x24@1x', function() {
 });
 
 gulp.task('imessenger32x24@2x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 64,
             height: 48,
@@ -889,7 +889,7 @@ gulp.task('imessenger32x24@2x', function() {
 });
 
 gulp.task('imessenger32x24@3x', function() {
-    gulp.src(config.appIconSrc + '*/*.png')
+    gulp.src(config.appIconSrc + '*/*_ios.png')
         .pipe(imageResize({
             width: 96,
             height: 72,
