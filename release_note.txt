@@ -1,3 +1,11 @@
+2016/07/01
+新增製作launch image功能
+  原圖放置範例:
+    作業區/launchImage來源/dj2.png
+  結果會產生於:
+    /作業區/launchImage結果/dj2/xxxxx.png
+
+
 2016/06/30
 製作app icon調整為qpkg, android, ios使用不同原圖的方式
   範例:
