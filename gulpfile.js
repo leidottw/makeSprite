@@ -10,6 +10,7 @@ const path = require('path');
 const gulpRename = require('gulp-rename');
 const gray = require('./gray.js');
 const imageResize = require('gulp-image-resize');
+const gm = require('gm').subClass({ imageMagick: true });
 
 gulp.task('default', ['sprite']);
 gulp.task('appIcon', ['qpkgIcon', 'mobileAppIcon']);
@@ -902,4 +903,51 @@ gulp.task('imessenger32x24@3x', function() {
             path.basename = 'icon-messages-transcript-32x24@3x';
         }))
         .pipe(gulp.dest(config.appIconDestMobileApp));
+});
+
+gulp.task('launchImage', function() {
+    fs.readdir(config.launchImageSrc, function(err, files) {
+        if (err) {
+            throw err;
+        }
+
+        try {
+            fs.accessSync(config.launchImageDest);
+        } catch(err) {
+            fs.mkdir(config.launchImageDest);
+        }
+
+        files.filter(function (file) {
+            return !fs.statSync(path.join(config.launchImageSrc, file)).isDirectory() && /.*\.png$/.test(file);
+        }).forEach(function (file) {
+            var filename = path.basename(file, '.png');
+
+            try {
+                fs.accessSync(config.launchImageDest + filename + '/');
+            } catch(err) {
+                fs.mkdir(config.launchImageDest + filename + '/');
+            }
+
+            config.launchImage.forEach((conf) => {
+                var iconPositionX = (conf.width - conf.centerWidth) / 2,
+                    iconPositionY = (conf.height - conf.centerHeight - conf.footerHeight) / 2,
+                    linePositionX = (conf.width - conf.footerHeight * 2.2) / 2,
+                    linePositionY = conf.height - conf.footerHeight + 1,
+                    qnapWidth = conf.footerHeight * 2.2;
+
+                gm(conf.width, conf.height, '#ffffff')
+                .draw(['image Over ' + iconPositionX + ',' + iconPositionY + ' ' + conf.centerWidth + ',' + conf.centerHeight + ' ' + config.launchImageSrc + file])
+                .draw(['image Over ' + linePositionX + ',' + linePositionY + ' ' + qnapWidth +',' + conf.footerHeight + ' ' +'assets/qnap.png'])
+                .stroke('#b4b4b4', 1)
+                .drawLine(0, linePositionY, conf.width, linePositionY)
+                .write(config.launchImageDest + filename + '/' + filename + conf.name + '.png', function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log(filename + conf.name + '.png created');
+                    }
+                });
+            });
+        });
+    });
 });
