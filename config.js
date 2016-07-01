@@ -1,15 +1,15 @@
 'use strict';
 
 exports = module.exports = {
-    spriteSrc: './作業區/images/', // 組縮圖+壓縮 檔案來源路徑
-    spriteDest: './作業區/build/', // 組縮圖+壓縮 結果產生路徑
-    compressSrc: './作業區/只做壓縮來源/', // 只做壓縮 檔案來源路徑
-    compressDest: './作業區/只做壓縮結果/', // 只做壓縮 結果產生路徑
-    appIconSrc: './作業區/appIcon來源/',
-    appIconDestQpkg: './作業區/appIcon結果/qpkg/',
-    appIconDestMobileApp: './作業區/appIcon結果/mobileApp/',
-    launchImageSrc: '作業區/launchImage來源/',
-    launchImageDest: '作業區/launchImage結果/',
+    spriteSrc: './workarea/images/', // 組縮圖+壓縮 檔案來源路徑
+    spriteDest: './workarea/build/', // 組縮圖+壓縮 結果產生路徑
+    compressSrc: './workarea/只做壓縮來源/', // 只做壓縮 檔案來源路徑
+    compressDest: './workarea/只做壓縮結果/', // 只做壓縮 結果產生路徑
+    appIconSrc: './workarea/appIcon來源/',
+    appIconDestQpkg: './workarea/appIcon結果/qpkg/',
+    appIconDestMobileApp: './workarea/appIcon結果/mobileApp/',
+    launchImageSrc: 'workarea/launch_image_source/',
+    launchImageDest: 'workarea/launch_image_result/',
     launchImage: [{
         name: '_ipad_landscape',
         width: 1024,
