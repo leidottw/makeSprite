@@ -11,6 +11,7 @@ const gulpRename = require('gulp-rename');
 const gray = require('./gray.js');
 const imageResize = require('gulp-image-resize');
 const gm = require('gm').subClass({ imageMagick: true });
+const source = require('vinyl-source-stream');
 
 gulp.task('default', ['sprite']);
 gulp.task('appIcon', ['qpkgIcon', 'mobileAppIcon']);
@@ -71,9 +72,7 @@ css = `${selectorList.join(', ')} {
 
             spriteData.img
                 .pipe(buffer())
-                .pipe(gulpPngquant({
-                    quality: '35-50'
-                }))
+                .pipe(gulpPngquant())
                 .pipe(gulp.dest(config.spriteDest + 'images/'));    //產生後的sprite圖路徑
 
             spriteData.css.pipe(gulp.dest(config.spriteDest + 'css/'));   //產生後的css路徑
@@ -83,9 +82,7 @@ css = `${selectorList.join(', ')} {
 
 gulp.task('compress', function() {
     gulp.src(config.compressSrc + '**/*.png')
-        .pipe(gulpPngquant({
-            quality: '35-50'
-        }))
+        .pipe(gulpPngquant())
         .pipe(gulp.dest(config.compressDest));
 });
 
@@ -905,7 +902,7 @@ gulp.task('imessenger32x24@3x', function() {
         .pipe(gulp.dest(config.appIconDestMobileApp));
 });
 
-gulp.task('launchImage', function() {
+gulp.task('launchImage2', function() {
     fs.readdir(config.launchImageSrc, function(err, files) {
         if (err) {
             throw err;
@@ -947,6 +944,50 @@ gulp.task('launchImage', function() {
                         console.log(filename + conf.name + '.png created');
                     }
                 });
+            });
+        });
+    });
+});
+
+gulp.task('launchImage', function() {
+    fs.readdir(config.launchImageSrc, function(err, files) {
+        if (err) {
+            throw err;
+        }
+
+        try {
+            fs.accessSync(config.launchImageDest);
+        } catch(err) {
+            fs.mkdir(config.launchImageDest);
+        }
+
+        files.filter(function (file) {
+            return !fs.statSync(path.join(config.launchImageSrc, file)).isDirectory() && /.*\.png$/.test(file);
+        }).forEach(function (file) {
+            var filename = path.basename(file, '.png');
+
+            try {
+                fs.accessSync(config.launchImageDest + filename + '/');
+            } catch(err) {
+                fs.mkdir(config.launchImageDest + filename + '/');
+            }
+
+            config.launchImage.forEach((conf) => {
+                var iconPositionX = (conf.width - conf.centerWidth) / 2,
+                    iconPositionY = (conf.height - conf.centerHeight - conf.footerHeight) / 2,
+                    linePositionX = (conf.width - conf.footerHeight * 2.2) / 2,
+                    linePositionY = conf.height - conf.footerHeight + 1,
+                    qnapWidth = conf.footerHeight * 2.2;
+
+                gm(conf.width, conf.height, '#ffffff')
+                .draw(['image Over ' + iconPositionX + ',' + iconPositionY + ' ' + conf.centerWidth + ',' + conf.centerHeight + ' ' + config.launchImageSrc + file])
+                .draw(['image Over ' + linePositionX + ',' + linePositionY + ' ' + qnapWidth +',' + conf.footerHeight + ' ' +'assets/qnap.png'])
+                .stroke('#b4b4b4', 1)
+                .stream('png')
+                .pipe(source(filename + conf.name + '.png'))
+                .pipe(buffer())
+                .pipe(gulpPngquant())
+                .pipe(gulp.dest(config.launchImageDest + filename + '/'));
             });
         });
     });
