@@ -983,6 +983,7 @@ gulp.task('launchImage', function() {
                 .draw(['image Over ' + iconPositionX + ',' + iconPositionY + ' ' + conf.centerWidth + ',' + conf.centerHeight + ' ' + config.launchImageSrc + file])
                 .draw(['image Over ' + linePositionX + ',' + linePositionY + ' ' + qnapWidth +',' + conf.footerHeight + ' ' +'assets/qnap.png'])
                 .stroke('#b4b4b4', 1)
+                .drawLine(0, linePositionY, conf.width, linePositionY)
                 .stream('png')
                 .pipe(source(filename + conf.name + '.png'))
                 .pipe(buffer())
