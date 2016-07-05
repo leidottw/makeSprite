@@ -12,6 +12,7 @@ const gray = require('./gray.js');
 const imageResize = require('gulp-image-resize');
 const gm = require('gm').subClass({ imageMagick: true });
 const source = require('vinyl-source-stream');
+const chalk = require('chalk');
 
 gulp.task('default', ['sprite']);
 gulp.task('appIcon', ['qpkgIcon', 'mobileAppIcon']);
@@ -926,6 +927,8 @@ gulp.task('launchImage', function() {
             }
 
             config.launchImage.forEach((conf) => {
+                console.log(chalk.blue('Generate launch image: ') + filename + conf.name + '.png');
+
                 var iconPositionX = (conf.width - conf.centerWidth) / 2,
                     iconPositionY = (conf.height - conf.centerHeight - conf.footerHeight) / 2,
                     linePositionX = (conf.width - conf.footerHeight * 2.2) / 2,
@@ -971,6 +974,8 @@ gulp.task('launchImageODM', function() {
             }
 
             config.launchImage.forEach((conf) => {
+                console.log(chalk.blue('Generate launch image: ') + filename + conf.name + '.png');
+
                 var iconPositionX = (conf.width - conf.centerWidth) / 2,
                     iconPositionY = (conf.height - conf.centerHeight) / 2,
                     qnapWidth = conf.footerHeight * 2.2;
