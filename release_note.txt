@@ -1,3 +1,10 @@
+2016/07/19
+新增製作icon font功能
+svg圖丟到"workarea/iconFontSrc/"目錄底下
+產生的icon font含簡易網頁就會產生在"workarea/iconFontDest/"目錄底下
+把所有東西拖拉到NAS的Web folder就變成網站可以給其他人查詢了
+
+
 2016/07/01
 因為windows支援度問題取消使用中文路徑
 作業區 -> workarea

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QNAP Icon Font</title>
+    <link rel="stylesheet" href="./iconFontCSSTemplate.css">
+    <style>
+    body {
+        margin: 0;
+    }
+
+    #title {
+        padding: 20px;
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .word {
+        padding: 20px;
+        border-bottom: 1px solid;
+        margin-bottom: 20px;
+    }
+
+    .word .info {
+        font-family: monospace;
+        font-size: 24px;
+    }
+
+    .word .info .highlight {
+        background-color: #dfe3ff;
+    }
+
+    .table {
+        padding: 20px;
+    }
+
+    .table .cell {
+        display: inline-block;
+        padding: 10px;
+        border: 1px solid black;
+        margin: 5px;
+    }
+
+    .table .cell a {
+        color: initial;
+        text-decoration: none;
+    }
+
+    .table .cell:hover {
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <div id="title">QNAP Icon Font</div>
+    <div id="container">
+        <div class="table">
+            <% _.each(glyphs, function(glyph) { %>
+                <div class="cell">
+                    <a href="#<%= glyph.name %>"><span class="<%= className %> <%= className %>-<%= glyph.name %> <%= className %>-5x"></span></a>
+                </div>
+            <% }); %>
+        </div>
+        <% _.each(glyphs, function(glyph) { %>
+        <div class="word" id="<%= glyph.name %>">
+            <div class="info">Code:<span class="highlight">\<%= glyph.unicode[0].charCodeAt(0).toString(16).toUpperCase() %></span>, Name:<span class="highlight"><%= glyph.name %></span>, Sample:<span class="highlight">&lt;span class="<%= className %> <%= className %>-<%= glyph.name %>"&gt;&lt;span&gt;</span></div>
+            <span class="<%= className %> <%= className %>-<%= glyph.name %> <%= className %>-5x"></span> 5x
+            <span class="<%= className %> <%= className %>-<%= glyph.name %> <%= className %>-4x"></span> 4x
+            <span class="<%= className %> <%= className %>-<%= glyph.name %> <%= className %>-3x"></span> 3x
+            <span class="<%= className %> <%= className %>-<%= glyph.name %> <%= className %>-2x"></span> 2x
+            <span class="<%= className %> <%= className %>-<%= glyph.name %> <%= className %>-lg"></span> lg
+        </div>
+        <% }); %>
+    </div>
+</body>
+</html>

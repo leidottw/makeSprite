@@ -1,18 +1,20 @@
 'use strict';
 
-const config = require('./config.js');
-const buffer = require('vinyl-buffer');
-const gulp = require('gulp');
-const gulpPngquant = require('gulp-pngquant');
-const spritesmith = require('gulp.spritesmith');
 const fs = require('fs');
 const path = require('path');
-const gulpRename = require('gulp-rename');
-const gray = require('./gray.js');
-const imageResize = require('gulp-image-resize');
-const gm = require('gm').subClass({ imageMagick: true });
-const source = require('vinyl-source-stream');
 const chalk = require('chalk');
+const gm = require('gm').subClass({ imageMagick: true });
+const gulp = require('gulp');
+const consolidate = require('gulp-consolidate');
+const iconfont = require('gulp-iconfont');
+const imageResize = require('gulp-image-resize');
+const gulpPngquant = require('gulp-pngquant');
+const gulpRename = require('gulp-rename');
+const spritesmith = require('gulp.spritesmith');
+const buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
+const config = require('./config.js');
+const gray = require('./gray.js');
 
 gulp.task('default', ['sprite']);
 gulp.task('appIcon', ['qpkgIcon', 'mobileAppIcon']);
@@ -990,4 +992,24 @@ gulp.task('launchImageODM', function() {
             });
         });
     });
+});
+
+gulp.task('iconfont', function() {
+    gulp.src(config.iconFontSrc + '*.svg')
+        .pipe(iconfont({
+            fontName: 'qnapIconFont',
+            prependUnicode: true,
+            normalize: true
+        }))
+        .on('glyphs', function(glyphs, options) {
+            gulp.src(['assets/iconFontHtmlTemplate.html', 'assets/iconFontCSSTemplate.css'])
+            .pipe(consolidate('underscore', {
+                glyphs: glyphs,
+                fontName: 'qnapIconFont',
+                fontPath: config.iconFontDest,
+                className: 'qf'
+            }))
+            .pipe(gulp.dest(config.iconFontDest));
+        })
+        .pipe(gulp.dest(config.iconFontDest));
 });

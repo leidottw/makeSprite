@@ -5,6 +5,8 @@ exports = module.exports = {
     spriteDest: './workarea/build/', // 組縮圖+壓縮 結果產生路徑
     compressSrc: './workarea/只做壓縮來源/', // 只做壓縮 檔案來源路徑
     compressDest: './workarea/只做壓縮結果/', // 只做壓縮 結果產生路徑
+    iconFontSrc: './workarea/iconFontSrc/',
+    iconFontDest: './workarea/iconFontDest/',
     appIconSrc: './workarea/appIcon來源/',
     appIconDestQpkg: './workarea/appIcon結果/qpkg/',
     appIconDestMobileApp: './workarea/appIcon結果/mobileApp/',
