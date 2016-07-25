@@ -1,0 +1,66 @@
+2016/07/19
+新增製作icon font功能
+svg圖丟到"workarea/iconFontSrc/"目錄底下
+產生的icon font含簡易網頁就會產生在"workarea/iconFontDest/"目錄底下
+把所有東西拖拉到NAS的Web folder就變成網站可以給其他人查詢了
+
+
+2016/07/01
+因為windows支援度問題取消使用中文路徑
+作業區 -> workarea
+其他原有的子目錄不變
+
+
+2016/07/01
+新增製作launch image功能
+  原圖放置範例:
+    workarea/launch_image_source/dj2.png
+  結果會產生於:
+    workarea/launch_image_result/dj2/xxxxx.png
+
+
+2016/06/30
+製作app icon調整為qpkg, android, ios使用不同原圖的方式
+  範例:
+    workarea/appIcon來源/Container/Container_qpkg.png
+    workarea/appIcon來源/Container/Container_android.png
+    workarea/appIcon來源/Container/Container_ios.png
+
+製作圖給qpkg會使用Container_qpkg.png當原圖
+製作圖給android會使用Container_android.png當原圖
+製作圖給ios會使用Container_ios.png當原圖
+
+
+2016/06/29
+1. 新增製作mobileAppIcon功能
+   點選"製作appIcon.bat"
+   會同時做出for qpkg與for mobile app的icon
+
+
+2016/06/29
+1. 新增製作qpkgIcon功能
+   windows電腦使用此功能需安裝
+   http://www.imagemagick.org/download/binaries/ImageMagick-7.0.2-1-Q16-x64-dll.exe
+   安裝步驟請勿無腦next
+   到了很多checkbox頁面時
+
+   記得勾選"Install legacy utilities (e.g. convert)"
+   記得勾選"Install legacy utilities (e.g. convert)"
+   記得勾選"Install legacy utilities (e.g. convert)"
+
+   要製作Icon的原始大圖請放在以下目錄
+     workarea/appIcon來源/[自訂目錄名稱]/[原始圖]
+     * 自訂目錄名稱: 產生的結果也會出現在對應的目錄名稱下
+     * 輸出結果: 產生結果的檔名會同原始圖檔名後面再加以"_size"點綴
+
+2016/06/28
+1. 新增只做壓縮不組圖功能
+2. 可自訂目錄工作目錄路徑(可自己修改config.js檔)
+   預設工作目錄路徑變更為makeSprite目錄底下的
+     組縮圖+壓縮的來源檔案放置處
+       workarea/images/[自訂目錄名稱]/[待組合的的原始檔們]
+       * 自訂目錄名稱: 產生的結果檔名將會同[自訂目錄名稱]
+
+     只做壓縮的來源檔案放置處
+       workarea/只做壓縮來源/[自訂目錄名稱]/[待組合的的原始檔們]
+       * 自訂目錄名稱: 產生的結果也會出現在對應的[自訂目錄名稱]目錄下
