@@ -1,6 +1,6 @@
 # makeSprite
 
-## 圖檔處理只支援png, 製作iconFont只可使用svg
+> 圖檔處理只支援png, 製作iconFont只可使用svg
 
 ## 安裝
 1. 安裝git
